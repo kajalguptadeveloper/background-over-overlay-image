@@ -1,0 +1,111 @@
+    document.getElementById('upload').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const img = document.getElementById('imageView');
+        const errorDiv = document.getElementById('error');
+    
+        const imgReader = new FileReader();
+    
+        imgReader.onload = function(e) {
+          const image = new Image();
+          image.src = e.target.result;
+    
+          image.onload = function() {
+            const width = this.width;
+            const height = this.height;
+    
+            if (width > 1080 && height > 720) {
+              img.src = e.target.result;
+              img.style.display = 'block';
+              errorDiv.textContent = '';
+            } 
+              else {
+                // errorDiv.textContent = 'Error: Image resolution must be 720p or 1080p.';
+                // img.style.display = 'none';
+                alert('Error: Image resolution should be at least 720px x 720px.');
+              }
+            }
+          };
+        
+    
+        imgReader.readAsDataURL(file);
+      });
+      
+      function BedRoom() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/Capture6cb7f937f5e5ce4c.jpeg";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg1";
+      }
+      function office() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/office.webp";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg2";
+      }
+      function Hall() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/hall.jpeg";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg3";
+      }
+      function LivingRoom() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/pexels-photo-1571458.webp";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg4";
+      }
+
+      function loadFile(event) {
+      const id = event.target.id.replace('file', 'output');
+      const output = document.getElementById(id);
+      output.src = URL.createObjectURL(event.target.files[0]);
+    }
+    
+      function updateOverlaySize(size) {
+        const dimensions = size.split('x');
+        const overlay = document.querySelector('.overlay');
+        const overlayImage = document.getElementById('output');
+      
+       
+          
+            if (dimensions[0] === '12' && dimensions[1] === '9') {
+              overlay.style.width = '100px';
+              overlay.style.height = '100px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '11' && dimensions[1] === '11') {
+              overlay.style.width = '150px';
+              overlay.style.height = '150px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '16' && dimensions[1] === '12') {
+              overlay.style.width = '220px';
+              overlay.style.height = '146px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '18' && dimensions[1] === '12') {
+              overlay.style.width = '252px';
+              overlay.style.height = '146px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '16' && dimensions[1] === '16') {
+              overlay.style.width = '224px';
+              overlay.style.height = '224px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '16' && dimensions[1] === '21') {
+              overlay.style.width = '224px';
+              overlay.style.height = '315px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else {
+              overlay.style.width = `${dimensions[0]}px`;
+              overlay.style.height = `${dimensions[1]}px`;
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            }
+          }

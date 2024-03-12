@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="screen and (min-width: 700px) and (max-width: px)">
+    <title>no worries</title>
+    <!-- --------------    css code  ---------------  -->
+    <style>
+      #imageContainer {
+        top: 50px;
+        position: absolute;
+        width: 1000px;
+        height: 500px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    
+     #mainImage {
+        width: 1000px;
+        height: 500px;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 62px;
+        left: 101px;
+        width: 0px;
+        height: 0px;
+        right: 25px;
+        margin-left: 23%;
+      
+
+        background-color: rgba(253, 255, 253, 0.925); /* Adjust the opacity as needed */
+      }
+      .overlay img,.button-container,.overlaysize label{
+        width: 310px;
+        height: 198px;
+       }
+
+     .img{
+        object-fit: cover;
+      }
+      .kajal {
+       background-color:white;
+        display: flex;
+        justify-content:space-evenly;
+        margin-left: 35%;
+        margin-right: 50%;
+        margin-top: 2%;
+        transform: matrix(1, 5, 5, 1);
+        padding-top: 1px;
+        align-items: center;
+        padding: 10px;
+        padding-right: 12px;
+        box-sizing: border-box;
+        width:max-content;
+      }
+      .kajal button, .kajal input, .kajal label {
+        margin-right: 22px;
+        border: 1px solid #8B4513;
+        background-color: #A0522D;
+        color: white;
+        padding: 13px;
+        padding-left: 12px;
+        border-radius: 20cap;
+        display: inline-block;
+        text-align: center;
+        margin-left: 12px;
+        padding-bottom: 10px;
+        justify-content: space-around;
+        align-self: first baseline;
+        margin-top: 5px;
+          }
+          .kajal button:hover {
+            background-color: #520505;
+            cursor: pointer;
+          }
+          .size-button{
+            margin-right: 15px;
+            border-radius: 1cqi;
+            background-color: #8B4513;
+            border-color: 1px solid#8B4513;
+            color: white;
+            padding: 10px 10px;
+          }
+          .size-button:hover {
+            background-color: #520505;
+            cursor:pointer;
+
+          }
+          #imageView {
+            display: none;
+            max-width: 30%;
+            height: 30%;
+          }
+          #error {
+            color: white;
+            font-weight: bold;
+          }
+          
+            .box {
+                  width: 72px;
+            height: 28px;
+            border: 1px solid black;
+            color:white;
+            background-color:#aa8989;
+            border: rgb(216, 152, 68);
+            border-radius: 0cap;
+            padding: 11px;
+            padding-top: 2px;
+            margin: 5px;
+            text-align: center;
+        }
+           
+              .flex-box p {
+                background-color: #aa8989;
+            padding: 9px 38px;
+            border: 1px solid #f55e5e(0, 0, 0);
+            margin-right: 27px;
+            border-radius: 0px;
+            color: white;
+        }
+              
+              .button-container {
+                /* existing rules */
+                display: flex;
+                align-items: center;
+                margin-left: 35%;/* vertically center the buttons */
+              justify-self: center;
+              margin-bottom: 30%;
+              display: flex;
+              justify-content: space-between;
+              height: 50px; /* adjust the height as needed */
+               padding: 10px; /* add any padding you want */
+                margin-bottom: 20px;
+             
+              }
+              .upload-btn{
+                background-color:white;
+                margin-top: 40%; 
+                margin-right: 45%;
+                margin-left: 48%;
+                border-radius: 50cap;
+                border-color: 1px solid rgb(117, 18, 18);
+                
+              }
+                
+              
+           </style>
+      
+    
+    <!-- --------------    end css code  ---------------  -->
+  </head>
+
+  <body>
+    <!-- main section -->
+    <main>
+      <div class="container">
+        <div id="imageContainer">
+          
+             <img id="mainImage" src="/image/98396401-9ba2-468e-a202-670163fdc2fe.jpg"alt="-Image"/>
+            
+             <div class="overlay">
+              
+             <img id="output"  alt="preview"/>
+             
+            
+            
+            </div>
+          </div>
+        </div>
+      </div>
+     
+       
+      </div>
+    </div>
+<main>
+ 
+
+</main>
+        <div class="container">
+          <div class="upload-btn">
+            <input type="file" id="upload" accept="image/*">
+            <div id="error"></div>
+            <img id="imageView">
+            <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+            <label for="file" style="cursor: pointer;"> 
+             <div style="display: flex; align-items: center; width: 130px;margin: left 30px; background-color:#8B4513;border-radius:25cap; color:white; border-color:1px solid brown;" > 
+                <div><img style="margin-top: 3px;" src="image/cloud-computing.png" alt="-Image" /></div> <!-- css di h style me -->
+                <div style="margin-left: 5px;">Upload Image</div>  <!--css di h style me -->
+              </div>
+            </label>
+          </div>
+
+          <div class="flex"></div>
+
+        <div class="kajal">
+         
+          <div class="box">
+            change background
+          </div>
+          
+          <button onclick="BedRoom()">BedRoom</button>
+          <button onclick="office()">office</button>
+          <button onclick="Hall()">Hall</button>
+          <button onclick="LivingRoom()">LivingRoom</button>
+          
+        </div>
+      </div>
+    </main>
+    <div class="button-container">
+      <div class="flex-box"id=size alt="size">
+        <p>sizes</p>
+      </div>
+   
+      <input type="size" accept="size" name="size" id="updatesize" onchange="loadFile(event)" style="display: none;">
+      <label for="updatesize" style="cursor: pointer;"></label>
+      
+      <button class="size-button" data-size="12x9" onclick="updateOverlaySize('12x9')">12*9</button>
+      <button class="size-button" data-size="11x11" onclick="updateOverlaySize('11x11')">11*11</button>
+      <button class="size-button" data-size="16x12" onclick="updateOverlaySize('16x12')">16*12</button>
+      <button class="size-button" data-size="12x9" onclick="updateOverlaySize('18x12')">18*12</button>
+      <button class="size-button" data-size="11x11" onclick="updateOverlaySize('16x16')">16*16</button>
+      <button class="size-button" data-size="16x12" onclick="updateOverlaySize('16x21')">16*21</button>
+     </div>
+    
+  </div> 
+  
+    <!-- endmain section -->
+    
+    <!-- --------------    js code  ---------------  -->
+    <script>
+      
+      document.getElementById('upload').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const img = document.getElementById('imageView');
+        const errorDiv = document.getElementById('error');
+    
+        const imgReader = new FileReader();
+    
+        imgReader.onload = function(e) {
+          const image = new Image();
+          image.src = e.target.result;
+    
+          image.onload = function() {
+            const width = this.width;
+            const height = this.height;
+    
+            if (width > 1080 && height > 720) {
+              img.src = e.target.result;
+              img.style.display = 'block';
+              errorDiv.textContent = '';
+            } 
+              else {
+                // errorDiv.textContent = 'Error: Image resolution must be 720p or 1080p.';
+                // img.style.display = 'none';
+                alert('Error: Image resolution should be at least 720px x 720px.');
+              }
+            }
+          };
+        
+    
+        imgReader.readAsDataURL(file);
+      });
+      
+      function BedRoom() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/Capture6cb7f937f5e5ce4c.jpeg";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg1";
+      }
+      function office() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/office.webp";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg2";
+      }
+      function Hall() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/hall.jpeg";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg3";
+      }
+      function LivingRoom() {
+        var image = document.getElementById("mainImage");
+        // Replace 'newImage.jpg' with the path to your new image
+        image.src = "https://img.hotimg.com/pexels-photo-1571458.webp";
+        // Replace 'New Image' with an appropriate alt text for the new image
+        image.alt = "bg4";
+      }
+
+      function loadFile(event) {
+      const id = event.target.id.replace('file', 'output');
+      const output = document.getElementById(id);
+      output.src = URL.createObjectURL(event.target.files[0]);
+    }
+    
+      function updateOverlaySize(size) {
+        const dimensions = size.split('x');
+        const overlay = document.querySelector('.overlay');
+        const overlayImage = document.getElementById('output');
+      
+       
+          
+            if (dimensions[0] === '12' && dimensions[1] === '9') {
+              overlay.style.width = '100px';
+              overlay.style.height = '100px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '11' && dimensions[1] === '11') {
+              overlay.style.width = '150px';
+              overlay.style.height = '150px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '16' && dimensions[1] === '12') {
+              overlay.style.width = '220px';
+              overlay.style.height = '146px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '18' && dimensions[1] === '12') {
+              overlay.style.width = '252px';
+              overlay.style.height = '146px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '16' && dimensions[1] === '16') {
+              overlay.style.width = '224px';
+              overlay.style.height = '224px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else if (dimensions[0] === '16' && dimensions[1] === '21') {
+              overlay.style.width = '224px';
+              overlay.style.height = '315px';
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            } else {
+              overlay.style.width = `${dimensions[0]}px`;
+              overlay.style.height = `${dimensions[1]}px`;
+              overlayImage.style.width = '100%';
+              overlayImage.style.height = '100%';
+            }
+          }
+          
+    </script>
+    <!-- --------------   end js code  ---------------  -->
+  
+
+
+   
+   
+  
+  
+    
+</body>
+</html>
+
+    
